@@ -3,6 +3,8 @@
 //
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
+#include <string>
+using std::string;
 
 unsigned int stringCalc( string c ) {
     if(c == "") return 0;
