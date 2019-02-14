@@ -3,7 +3,6 @@
 
 CMakeFiles/Catch_Practice.dir/main.cpp.obj: ../catch.hpp
 CMakeFiles/Catch_Practice.dir/main.cpp.obj: ../main.cpp
-CMakeFiles/Catch_Practice.dir/main.cpp.obj: ../tests.cpp
 
 CMakeFiles/Catch_Practice.dir/tests.cpp.obj: ../catch.hpp
 CMakeFiles/Catch_Practice.dir/tests.cpp.obj: ../tests.cpp

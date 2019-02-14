@@ -1,15 +1,22 @@
 //
 // Created by kerne on 2/13/2019.
 //
-#define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include <string>
 using std::string;
 
-unsigned int stringCalc( string c ) {
+int stringCalc(const string &c );
+
+int stringCalc(const string &c) {
     if(c == "") return 0;
+    else
+        return std::stoi(c);
+    return 1;
 }
 
-TEST_CASE( "Factorials are computed", "[factorial]" ) {
+TEST_CASE( "Strings are computed", "[stringCalc]" ) {
     REQUIRE( stringCalc("") == 0 );
+    REQUIRE( stringCalc("1") == 1);
+    REQUIRE( stringCalc("16") == 16);
+    REQUIRE( stringCalc("23") == 23);
 }
