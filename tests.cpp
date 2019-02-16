@@ -5,8 +5,6 @@
 #include <string>
 using std::string;
 
-int stringCalc(const string &c );
-
 int stringCalc(const string &c) {
     if(c == "") return 0;
     else
@@ -19,4 +17,5 @@ TEST_CASE( "Strings are computed", "[stringCalc]" ) {
     REQUIRE( stringCalc("1") == 1);
     REQUIRE( stringCalc("16") == 16);
     REQUIRE( stringCalc("23") == 23);
+    REQUIRE( stringCalc("1, 2") == 3);
 }
