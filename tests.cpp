@@ -1,15 +1,32 @@
 //
+#include <iostream>
 // Created by kerne on 2/13/2019.
 //
 #include "catch.hpp"
 #include <string>
+#include <sstream>
+using std::cin;
 using std::string;
 
-int stringCalc(const string &c) {
-    if(c == "") return 0;
-    else
+int stringCalc(string c) {
+    if (c == "") return 0;
+
+    for (auto f: c) {
+
+    if (f == ',') {
+        break;
+    }
         return std::stoi(c);
-    return 1;
+    }
+
+        int x, y;
+        string str, str1;
+        std::stringstream ss;
+        ss << c;
+        ss >> x >> str >> str1 >> y;
+        int answer = x + y;
+        return answer;
+
 }
 
 TEST_CASE( "Strings are computed", "[stringCalc]" ) {
