@@ -7,26 +7,24 @@
 #include <sstream>
 using std::cin;
 using std::string;
+using std::stoi;
 
 int stringCalc(string c) {
+    int result;
+
     if (c == "") return 0;
 
-    for (auto f: c) {
+    else if (c.length() < 3) return std::stoi(c);
 
-    if (f == ',') {
-        break;
+    else {
+        string o(1,c[0]);
+        string t(1,c[2]);
+
+        int x = stoi(o);
+        int y = stoi(t);
+        result = x + y;
     }
-        return std::stoi(c);
-    }
-
-        int x, y;
-        string str, str1;
-        std::stringstream ss;
-        ss << c;
-        ss >> x >> str >> str1 >> y;
-        int answer = x + y;
-        return answer;
-
+    return result;
 }
 
 TEST_CASE( "Strings are computed", "[stringCalc]" ) {
@@ -34,5 +32,6 @@ TEST_CASE( "Strings are computed", "[stringCalc]" ) {
     REQUIRE( stringCalc("1") == 1);
     REQUIRE( stringCalc("16") == 16);
     REQUIRE( stringCalc("23") == 23);
-    REQUIRE( stringCalc("1, 2") == 3);
+    REQUIRE( stringCalc("1,2") == 3);
+    REQUIRE( stringCalc("1\n5") == 6);
 }
